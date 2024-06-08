@@ -1,5 +1,3 @@
-const { DEFAULT_RUNTIME_WEBPACK } = require('next/dist/shared/lib/constants');
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
