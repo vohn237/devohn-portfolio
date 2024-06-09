@@ -34,7 +34,7 @@ const about = {
       fieldValue: 'devohn99',
     },
     {
-      fieldName: 'Freelance',
+      fieldName: 'Employment',
       fieldValue: 'Available',
     },
     {
@@ -98,7 +98,7 @@ const education = {
 const skills = {
   title: 'My skills',
   description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.',
+    "I've worked with a range of frameworks and libraries and have a solid understanding of web development technology. I am well-versed in the web development life cycle and have worked with both front-end and back-end technologies. I'm constantly seeking for new chances to advance my knowledge and skill set as a developer.",
   skillList: [
     {
       icon: <FaHtml5 />,
