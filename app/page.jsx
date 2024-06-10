@@ -11,7 +11,7 @@ const Home = () => {
     <section className="h-full">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row justify-between items-center xl:pt-8 xl:pb-24">
-          {/* Career  */}
+          {/* Career Section  */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
             <h1 className="h1 mb-6">
@@ -23,9 +23,12 @@ const Home = () => {
               applications, full-stack development, product testing and software
               solutions.
             </p>
-            {/* social buttons */}
+            {/* Social and Download Buttons */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
+                as="a"
+                href="/assets/resume/Devohn_Hall_Resume.pdf"
+                download="Devohn Hall Resume.pdf"
                 variant="outline"
                 size="lg"
                 className="uppercase flex items-center gap-2"

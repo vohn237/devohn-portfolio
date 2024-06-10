@@ -9,28 +9,28 @@ const services = [
     title: 'Web Development',
     description:
       'Web development is the work involved in developing a Web site for the Internet or an intranet. Web development can range from developing a simple single static page of plain text to complex Web-based Internet applications, electronic businesses, and social network services.',
-    href: '',
+    href: '/contact',
   },
   {
     num: '02',
     title: 'UI/UX Design',
     description:
       'User interface (UI) design is the process designers use to build interfaces in software or computerized devices, focusing on looks or style. Designers aim to create designs users will find easy to use and pleasurable.',
-    href: '',
+    href: '/contact',
   },
   {
     num: '03',
     title: 'Software Development',
     description:
       'Software development is the process of conceiving, specifying, designing, programming, documenting, testing, and bug fixing involved in creating and maintaining applications, frameworks, or other software components.',
-    href: '',
+    href: '/contact',
   },
   {
     num: '04',
     title: 'SEO',
     description:
       'Search engine optimization is the process of improving the quality and quantity of website traffic to a website or a web page from search engines. SEO targets unpaid traffic rather than direct traffic or paid traffic.',
-    href: '',
+    href: '/contact',
   },
 ];
 
