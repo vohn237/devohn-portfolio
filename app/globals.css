@@ -27,3 +27,8 @@
     -webkit-text-stroke: 1px var(--color-hover);
   }
 }
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 4px;
+}

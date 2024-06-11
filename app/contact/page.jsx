@@ -43,11 +43,15 @@ const Contact = () => {
     service: '', // Ensure this matches the default state needed for your select component
     message: '',
   });
-
+  const [formErrors, setFormErrors] = useState({});
   // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
+    setFormErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: validateField(name, value),
+    }));
   };
 
   // Special handle change for Select component if needed
@@ -56,22 +60,51 @@ const Contact = () => {
     setFormData((prevState) => ({ ...prevState, service: value }));
   };
 
+  // form validation
+  const validateForm = () => {
+    let errors = {};
+    if (!formData.firstname.trim()) errors.firstname = 'Firstname is required';
+    if (!formData.lastname.trim()) errors.lastname = 'Lastname is required';
+    if (!formData.email.trim()) errors.email = 'Email address is required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email))
+      errors.email = 'Email address is invalid';
+    if (!formData.phone.trim()) errors.phone = 'Phone number is required';
+    if (!formData.service.trim())
+      errors.service = 'Service selection is required';
+    if (!formData.message.trim()) errors.message = 'Message is required';
+    return errors;
+  };
+
+  const validateField = (name, value) => {
+    if (value.trim() === '')
+      return `${name.charAt(0).toUpperCase() + name.slice(1)} is required`;
+    if (name === 'email' && !/\S+@\S+\.\S+/.test(value))
+      return 'Email address is invalid';
+    return '';
+  };
+
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('/api/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      const result = await response.json();
-      console.log(result);
-      // Handle post-submission logic here, such as clearing the form or showing a success message
-    } catch (error) {
-      console.error('Submission error:', error);
+    const errors = validateForm();
+    setFormErrors(errors);
+    if (Object.keys(errors).length === 0) {
+      try {
+        const response = await fetch('/api/submit-form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+        const result = await response.json();
+        console.log(result);
+        // Handle post-submission logic here
+      } catch (error) {
+        console.error('Submission error:', error);
+      }
+    } else {
+      console.log('Validation errors', errors);
     }
   };
 
@@ -97,34 +130,54 @@ const Contact = () => {
                 to you within 24 hours.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input
-                  name="firstname"
-                  type="text"
-                  placeholder="Firstname"
-                  value={formData.firstname}
-                  onChange={handleChange}
-                />
-                <Input
-                  name="lastname"
-                  type="text"
-                  placeholder="Lastname"
-                  value={formData.lastname}
-                  onChange={handleChange}
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Email address"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-                <Input
-                  name="phone"
-                  type="tel"
-                  placeholder="Phone number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
+                <div>
+                  <Input
+                    name="firstname"
+                    type="text"
+                    placeholder="Firstname"
+                    value={formData.firstname}
+                    onChange={handleChange}
+                  />
+                  {formErrors.firstname && (
+                    <p className="error-message">{formErrors.firstname}</p>
+                  )}
+                </div>
+                <div>
+                  <Input
+                    name="lastname"
+                    type="text"
+                    placeholder="Lastname"
+                    value={formData.lastname}
+                    onChange={handleChange}
+                  />
+                  {formErrors.lastname && (
+                    <p className="error-message">{formErrors.lastname}</p>
+                  )}
+                </div>
+                <div>
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="Email address"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                  {formErrors.email && (
+                    <p className="error-message">{formErrors.email}</p>
+                  )}
+                </div>
+                <div>
+                  <Input
+                    name="phone"
+                    type="tel"
+                    placeholder="Phone number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                  {formErrors.phone && (
+                    <p className="error-message">{formErrors.phone}</p>
+                  )}
+                </div>
               </div>
               <Select
                 value={formData.service}
