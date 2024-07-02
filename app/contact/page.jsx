@@ -45,6 +45,9 @@ const Contact = () => {
   });
 
   const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+
   // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,7 +64,7 @@ const Contact = () => {
     setFormData((prevState) => ({ ...prevState, service: value }));
   };
 
-  // form validation
+  // Form validation
   const validateForm = () => {
     let errors = {};
     if (!formData.firstname.trim()) errors.firstname = 'Firstname is required';
@@ -90,6 +93,7 @@ const Contact = () => {
     const errors = validateForm();
     setFormErrors(errors);
     if (Object.keys(errors).length === 0) {
+      setIsSubmitting(true);
       try {
         const response = await fetch('/api/submit-form', {
           method: 'POST',
@@ -98,11 +102,26 @@ const Contact = () => {
           },
           body: JSON.stringify(formData),
         });
+
         const result = await response.json();
-        console.log(result);
-        // Handle post-submission logic here
+        if (response.ok) {
+          setSuccessMessage(result.message);
+          // Reset the form
+          setFormData({
+            firstname: '',
+            lastname: '',
+            email: '',
+            phone: '',
+            service: '',
+            message: '',
+          });
+        } else {
+          console.error('Server error:', result.message);
+        }
       } catch (error) {
-        console.error('Submission error:', error);
+        console.error('Submission error:', error.message);
+      } finally {
+        setIsSubmitting(false);
       }
     } else {
       console.log('Validation errors', errors);
