@@ -43,6 +43,7 @@ const Contact = () => {
     service: '', // Ensure this matches the default state needed for your select component
     message: '',
   });
+
   const [formErrors, setFormErrors] = useState({});
   // Handle input changes
   const handleChange = (e) => {
