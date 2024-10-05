@@ -2,7 +2,6 @@
 
 Welcome to the official repository of [Devohn Hall's Personal Portfolio Website](https://www.devohn.net/). This website serves as a platform to showcase my professional experience, skills, and projects as a Software Engineer and Full Stack Developer. It includes details about my background, accomplishments, and aspirations in the tech industry.
 
-![Portfolio Preview](https://www.devohn.net/assets/preview.png) <!-- Optional: Add a screenshot of your website -->
 
 ## Website Overview
 
