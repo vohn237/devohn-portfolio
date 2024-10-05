@@ -2,7 +2,6 @@
 
 Welcome to the official repository of [Devohn Hall's Personal Portfolio Website](https://www.devohn.net/). This website serves as a platform to showcase my professional experience, skills, and projects as a Software Engineer and Full Stack Developer. It includes details about my background, accomplishments, and aspirations in the tech industry.
 
-
 ## Website Overview
 
 The website is built to provide a clean and interactive experience for visitors to learn more about my career, skills, and the projects I’ve worked on. You can find sections covering:
@@ -15,44 +14,89 @@ The website is built to provide a clean and interactive experience for visitors 
 
 ## Technologies Used
 
-This portfolio website is built using the following technologies:
+### Main Technologies
 
-- **Frontend**: HTML5, CSS3, JavaScript (React.js)
-- **Backend**: Node.js, Express (Optional if used)
-- **Deployment**: GitHub Pages / Netlify / Vercel (Specify which service you use for deployment)
-- **Additional Tools**: 
-  - Responsive Design (CSS Flexbox/ Grid, Media Queries)
-  - API Integrations (Optional)
-  - SEO Optimization (meta tags, structured data)
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework.
 
-## Setup and Installation
+### UI Components
 
-If you’d like to clone this repository and run it locally, follow these steps:
+- **Radix UI**: A set of accessible, unstyled UI components for building high-quality design systems and web apps.
+  - `@radix-ui/react-dialog`
+  - `@radix-ui/react-scroll-area`
+  - `@radix-ui/react-select`
+  - `@radix-ui/react-slot`
+  - `@radix-ui/react-tabs`
+  - `@radix-ui/react-tooltip`
 
-1. Clone the repo:
+### Animations and Icons
+
+- **Framer Motion**: A library for animations in React.
+- **Lucide React**: A library of icons for React.
+- **React CountUp**: A React component wrapper around CountUp.js.
+- **React Icons**: A library of popular icons for React.
+- **Swiper**: A modern mobile touch slider.
+
+### Utilities
+
+- **Class Variance Authority**: A utility for managing class names in a type-safe way.
+- **clsx**: A utility for constructing `className` strings conditionally.
+- **Tailwind Merge**: A utility to merge Tailwind CSS classes.
+- **Tailwind CSS Animate**: A plugin for Tailwind CSS to add animations.
+
+### Database Clients
+
+- **MySQL2**: A MySQL client for Node.js.
+- **pg**: A PostgreSQL client for Node.js.
+
+### Development Tools
+
+- **ESLint**: A tool for identifying and fixing problems in JavaScript code.
+- **PostCSS**: A tool for transforming CSS with JavaScript plugins.
+- **Tailwind CSS**: As mentioned above, used for styling.
+
+## Getting Started
+
+To get a local copy up and running, follow these simple steps:
+
+1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/devohnhall/portfolio-website.git
    cd portfolio-website
-   
-2. Install dependencies:
+   ```
+
+2. **Install dependencies**:
+
    ```bash
    npm install
+   ```
 
-3. Start the devlopment server
+3. **Start the development server**:
+
    ```bash
    npm start
+   ```
 
-4. Open you browser and visit http://localhost:3000 to view the website locally.
+4. **Open your browser** and visit `http://localhost:3000` to view the website locally.
 
 ## Contributing
-If you find a bug or want to propose new features, feel free to open an issue or submit a pull request.
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
 
 ## Contact
-For inquiries or feedback, feel free to connect with me through the following:
 
-Portfolio: devohn.net
-Email: devohnhall@gmail.com
-LinkedIn: linkedin.com/in/devohn-hall
+Devohn Hall - [devohn99@outlook.com](mailto:devohn99@outlook.com)
+
+Project Link: [https://github.com/devohnhall/portfolio-website](https://github.com/devohnhall/portfolio-website)
