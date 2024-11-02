@@ -1,5 +1,15 @@
 'use client';
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { motion } from 'framer-motion';
 import {
   FaHtml5,
   FaCss3,
@@ -134,18 +144,6 @@ const skills = {
     },
   ],
 };
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
-
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { motion } from 'framer-motion';
 
 const Resume = () => {
   return (
