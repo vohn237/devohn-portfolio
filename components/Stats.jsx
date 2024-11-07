@@ -21,7 +21,7 @@ const Stats = () => {
                 className="flex flex-col items-center justify-center text-center  "
               >
                 <h2 className="text-accent text-4xl font-bold">
-                  <CountUp end={stat.count} duration={5} />
+                  <CountUp end={stat.count} duration={8} useEasing />
                 </h2>
                 <p className="text-white/80 ">{stat.text}</p>
               </div>

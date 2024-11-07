@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { FiDownload } from 'react-icons/fi';
-
+import Typing from '@/components/Typewriter';
 // components
 import Social from '@/components/Social';
 import Photo from '@/components/Photo';
@@ -13,10 +13,10 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row justify-between items-center xl:pt-8 xl:pb-24">
           {/* Career Section  */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Developer</span>
             <h1 className="h1 mb-6">
               Hey I&#39;m <br />
-              <span className="text-accent">Devohn Hall</span>
+              <span className="text-accent">Devohn</span>
+              <Typing roles={['Software Engineer', 'Full-Stack Developer']} />
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
               I am a software engineer with a passion for building web

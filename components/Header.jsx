@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Button } from './ui/button';
-// components
 import Nav from './Nav';
 import MobileNav from './MobileNav';
 
@@ -10,8 +9,9 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* logo */}
         <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            Devohn <span className="text-accent">.</span>
+          <h1 className="text-4xl font-semibold group">
+            Devohn{' '}
+            <span className="text-accent group-hover:animate-ping">.</span>
           </h1>
         </Link>
         {/* desktop nav  & hire button*/}
